@@ -1,28 +1,22 @@
 const express = require("express")
-const app = express()
-const cors = require("cors")
-const morgan = require("morgan")
-const { userRouter } = require("./routes/user.route")
-const { connection } = require("./db")
-const { productRouter } = require("./routes/product.route")
 require("dotenv").config()
-
-
-app.use(morgan('method :method URL :url status :status responseTime :response-time ms'));
-app.use(cors())
+const { connection } = require("./db")
+const { userRoute } = require("./Routes/User.route")
+const { productRoute } = require("./Routes/Product.route")
+const app = express()
 app.use(express.json())
 
-app.use("/user", userRouter)
-app.use("/product", productRouter)
 
 
+app.use("/user", userRoute)
+app.use('/product', productRoute)
 
-app.listen(process.env.PORT, async () => {
+app.listen(8080, async()=>{
     try{
-       await connection
-        console.log("connected to database")
+        await connection
+        console.log("connected to db")
     }catch(err){
-        console.log({error:err+"connection failed to database"})
+        console.log(err)
     }
-    console.log("server is running on port " + process.env.PORT)
-})  
+    console.log(`server is running on port 8080`)
+})

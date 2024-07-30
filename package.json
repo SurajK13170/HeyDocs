@@ -1,5 +1,5 @@
 {
-  "name": "heydoc",
+  "name": "heydocs-assignment",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,10 +14,10 @@
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "firebase": "^10.12.4",
     "jsonwebtoken": "^9.0.2",
-    "mogoose": "^0.0.1-security",
     "mongodb": "^6.8.0",
-    "morgan": "^1.10.0",
+    "mongoose": "^8.5.1",
     "nodemon": "^3.1.4",
     "validator": "^13.12.0"
   }
