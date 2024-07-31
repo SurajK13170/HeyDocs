@@ -1,4 +1,4 @@
-const { User } = require("../Models/User.model");
+const { User } = require("../models/user.model");
 
 const authorizeRoles = (permittedRoles) => {
   return async (req, res, next) => {
