@@ -1,0 +1,16 @@
+/* src/components/OnlineUsers.css */
+.online-users-container {
+    width: 200px;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.user-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.user-item:hover {
+    background-color: #f4f4f4;
+}

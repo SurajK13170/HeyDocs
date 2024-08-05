@@ -1,0 +1,53 @@
+/* src/components/Auth.css */
+.auth-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-container input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.auth-container button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.auth-container button:hover {
+    background-color: #0056b3;
+}
+
+.auth-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-buttons button {
+    background-color: #db4437; /* Google Red */
+    margin-bottom: 10px;
+}
+
+.auth-buttons button:last-child {
+    background-color: #4267B2; /* Facebook Blue */
+}
