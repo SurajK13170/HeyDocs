@@ -132,7 +132,7 @@ const Chat = () => {
                                     {msg.fileURL && (
                                         <div>
                                             <img src={msg.fileURL} alt="Uploaded file" />
-                                            <a href={msg.fileURL} download={`${Date.now()}.png`} target="_blank">Download</a>
+                                            <a href={msg.fileURL} download={`downloaded_file_${Date.now()}`} target="_blank" rel="noopener noreferrer">Download</a>
                                         </div>
                                     )}
                                     <div className="message-actions">

@@ -1,6 +1,6 @@
 // src/components/Login.js
 import React, { useState } from "react";
-import { signInWithEmailAndPassword, signInWithRedirect } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth, googleProvider } from "../config/firebaseConfig";
 import './style/Auth.css';
@@ -25,8 +25,9 @@ const Login = () => {
 
     const handleGoogleLogin = async () => {
         try {
-            await signInWithRedirect(auth, googleProvider);
+            await signInWithPopup(auth, googleProvider);
             navigate("/chat");
+            window.location="/chat";
         } catch (error) {
             setError("Failed to log in with Google.");
         }

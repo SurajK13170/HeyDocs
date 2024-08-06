@@ -1,8 +1,10 @@
 // src/components/Register.js
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword, signInWithRedirect, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import { auth, googleProvider, db } from "../config/firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+
 import './style/Auth.css';
 
 
@@ -11,6 +13,8 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
     const [error, setError] = useState("");
+
+    const navigate = useNavigate();
 
     const handleEmailRegister = async (e) => {
         e.preventDefault();
@@ -22,15 +26,14 @@ const Register = () => {
             // Update user profile with the name
             await updateProfile(user, { displayName: name });
 
-            // Store additional user data in Firestore
             await addDoc(collection(db, "users"), {
                 uid: user.uid,
                 name,
                 email,
                 createdAt: new Date()
             });
+            navigate("/");
 
-            // Redirect to chat or home
             // For example: window.location.href = "/chat";
         } catch (error) {
             setError("Failed to register. Please try again.");
@@ -39,7 +42,7 @@ const Register = () => {
 
     const handleGoogleRegister = async () => {
         try {
-            const result = await signInWithRedirect(auth, googleProvider);
+            const result = await signInWithPopup(auth, googleProvider);
             const user = result.user;
 
             // Store additional user data in Firestore if needed
@@ -49,9 +52,7 @@ const Register = () => {
                 email: user.email,
                 createdAt: new Date()
             });
-
-            // Redirect to chat or home
-            // For example: window.location.href = "/chat";
+            navigate("/chat");
         } catch (error) {
             setError("Failed to register with Google.");
         }
