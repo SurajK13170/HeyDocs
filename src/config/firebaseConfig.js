@@ -6,13 +6,13 @@ import { getMessaging, onMessage, getToken } from "firebase/messaging";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDJ6CMafNt8VuGAZHamk5wVgGNIprtCXwQ",
-    authDomain: "heydocs-94331.firebaseapp.com",
-    projectId: "heydocs-94331",
-    storageBucket: "heydocs-94331.appspot.com",
-    messagingSenderId: "1024095107551",
-    appId: "1:1024095107551:web:579c53f508a815914eec6a",
-    measurementId: "G-4PVGR9LVPZ"
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
 
   };
   
